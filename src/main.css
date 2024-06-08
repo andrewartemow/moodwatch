@@ -1,0 +1,35 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  overflow-y: scroll;
+  font-family: 'Rubik', sans-serif;
+}
+
+#root {
+  height: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  color: inherit;
+  font-family: inherit;
+  border: 0;
+}

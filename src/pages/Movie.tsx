@@ -59,14 +59,16 @@ const Movie = ({
                 {(
                   movieGenres ||
                   JSON.parse(localStorage.getItem('m_genres') as string)
-                )?.map((genre: string) => (
-                  <span
-                    key={genre}
-                    className="p-1 border-2 border-primary mr-2 rounded-md"
-                  >
-                    {genre}
-                  </span>
-                ))}
+                )
+                  ?.slice(0, 5)
+                  .map((genre: string) => (
+                    <span
+                      key={genre}
+                      className="p-1 border-2 border-primary mr-2 rounded-md"
+                    >
+                      {genre}
+                    </span>
+                  ))}
               </p>
               {(movieRating || localStorage.getItem('m_rating')) && (
                 <p className="mb-2">IMBD Raiting: {movieRating}</p>

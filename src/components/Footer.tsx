@@ -2,8 +2,17 @@ const Footer = () => {
   return (
     <footer className="w-full absolute bottom-0 p-3">
       <span className="flex w-full items-center justify-center gap-1 font-bold">
-        Made with &#127871; by{' '}
-        <a className="text-secondary underline" href="#">
+        Made with{' '}
+        <img
+          src="https://static-00.iconduck.com/assets.00/popcorn-emoji-492x512-rszsmz15.png"
+          alt="🍿"
+          width={20}
+        />{' '}
+        by{' '}
+        <a
+          className="text-secondary underline"
+          href="https://x.com/artemowandrei"
+        >
           Andrei
         </a>{' '}
         <img

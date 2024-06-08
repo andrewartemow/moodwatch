@@ -1,11 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ReactGA from 'react-ga';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Movie from './pages/Movie';
 
 import { GENRES } from './data';
+
+ReactGA.initialize('UA-167XXXXXX-X');
+ReactGA.pageview('/');
 
 function App() {
   const [movieTitle, setMovieTitle] = useState<null | string>(null);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import CardMood from '../components/CardMood';
@@ -10,8 +10,6 @@ interface HomeInterface {
 }
 
 const Home = ({ onClick }: HomeInterface) => {
-  const [movie, setMovie] = useState(null);
-
   const navigate = useNavigate();
 
   const redirectToMoviePage = () => {

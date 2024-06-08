@@ -22,7 +22,7 @@ function App() {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
+      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYWNkYjU4ZDA1YjRmOWYzODlkODBlODZlMzk5ODA4YyIsInN1YiI6IjY2NWFkM2E2ODJiZjQyZDdlY2FmMTI1NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1ucNen5DvISUJkxUy3PrPv7w7cd96n2XDIRE1CgrgHc`,
     },
   };
 

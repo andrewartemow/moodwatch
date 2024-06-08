@@ -22,7 +22,7 @@ function App() {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYWNkYjU4ZDA1YjRmOWYzODlkODBlODZlMzk5ODA4YyIsInN1YiI6IjY2NWFkM2E2ODJiZjQyZDdlY2FmMTI1NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1ucNen5DvISUJkxUy3PrPv7w7cd96n2XDIRE1CgrgHc`,
+      Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
     },
   };
 
@@ -41,7 +41,7 @@ function App() {
     )
       .then((response) => response.json())
       .then(async (response) => {
-        console.log(response.total_pages);
+        // console.log(response.total_pages);
 
         await fetch(
           `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${Math.floor(
@@ -58,7 +58,7 @@ function App() {
                 Math.floor(Math.random() * response.results.length)
               ];
 
-            console.log(randomMovie);
+            // console.log(randomMovie);
 
             // debugger;
             setMovieTitle(randomMovie.original_title);
@@ -84,13 +84,13 @@ function App() {
   };
 
   const fetchMovieTrailer = async () => {
-    fetch(
+    await fetch(
       `https://api.themoviedb.org/3/movie/${movieIdRef}/videos?language=en-US`,
       options
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        // console.log(response);
         if (response.results.length !== 0) {
           const officialTrailer = response.results.find(
             (item: any) => item.name === 'Official Trailer'
@@ -100,7 +100,7 @@ function App() {
             ? officialTrailer.key
             : response.results[0].key;
 
-          console.log(trailerKey);
+          // console.log(trailerKey);
           setMovieVideoKey(trailerKey);
           localStorage.setItem('m_trailer_key', trailerKey);
           return;
